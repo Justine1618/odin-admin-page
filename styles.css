@@ -1,43 +1,63 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 .body-container {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template: 1fr 4fr / 1fr 4fr;
     grid-template-areas:
     "dashboard header"
     "dashboard content";
+
+
 }
 
 .dashboard-container {
     background-color: blue;
     grid-area: dashboard;
     color: white;
+    padding: 0.5em;
 }
 
 .header-container {
     background-color: white;
     grid-area: header;
+
 }
 
 .content-container {
     background-color: lightgrey;
-    grid-area: content;
+    margin: 0;
+    padding: 2em 1em;
+    width: 100%;
+    display: grid;
+    grid-template: 1fr 1fr / 3fr 1fr;
+    grid-template-areas:
+    "projects announcements"
+    "projects trending"; 
+
 }
 
 .search-profile-container {
     width: 100%;
     height: 2em;
-    margin: 0.1em 0.2em;
-    padding: 0.1em;
+    margin: 0;
+    padding: 0.2em 0.4em;
     display: flex;
     flex-direction: row;
+
 }
 
 form {
@@ -63,6 +83,7 @@ input {
     width: 100%;
     height: 100%;
     display: flex;
+
 }
 
 .profile-icon-large {
@@ -93,4 +114,22 @@ input {
     background-color: blue;
     color: white;
     text-align: center;
+}
+
+.projects-container {
+    grid-area: projects;
+}
+
+.announcements-container {
+    grid-area: announcements;
+}
+
+.trending-container {
+    grid-area: trending;
+}
+
+.content-container p {
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
 }
